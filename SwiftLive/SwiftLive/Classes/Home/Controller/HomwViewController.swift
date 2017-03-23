@@ -22,6 +22,23 @@ class HomwViewController: UIViewController {
         
         return titleView
     }()
+    
+    fileprivate lazy var pageContentView : PageContentView = {
+        //确定内容的frame
+        let contentH = mScreenH - mStatusBarH - mNavgationBarH - mTitleViewH
+        let contentFrame = CGRect(x: 0, y: mStatusBarH+mNavgationBarH+mTitleViewH, width: mScreenW, height: contentH)
+        
+        //确定所有的字控制器
+        var childVcs = [UIViewController]()
+        
+        for _ in 0..<4{
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)), alpha: 1.0)
+            childVcs.append(vc)
+        }
+        let contentView = PageContentView(frame: contentFrame, childViewControllers: childVcs, parentViewController: self)
+        return contentView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +56,9 @@ extension HomwViewController{
         setNavigationBar()
         
         view.addSubview(pageTitleView)
+        
+        pageContentView.backgroundColor = UIColor.purple
+        view.addSubview(pageContentView)
     }
     
     func setNavigationBar(){

@@ -91,6 +91,7 @@ extension MTPageTitleView{
         
         
         guard let firstLabel = titleLabels.first else { return  }
+        firstLabel.textColor = UIColor.orange
         scrollView.addSubview(scrollLine)
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - linewidth, width: firstLabel.frame.width, height: linewidth)
     }
