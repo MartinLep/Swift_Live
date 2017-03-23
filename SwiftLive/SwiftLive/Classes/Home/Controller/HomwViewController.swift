@@ -12,7 +12,7 @@ private let mTitleViewH : CGFloat = 40
 
 class HomwViewController: UIViewController {
 
-    fileprivate lazy var pageTitleView : MTPageTitleView = {
+    fileprivate lazy var pageTitleView : MTPageTitleView = { [weak self] in
        
         let titleFrame =  CGRect(x: 0, y: mStatusBarH + mNavgationBarH, width: mScreenW, height: mTitleViewH)
     
@@ -20,10 +20,12 @@ class HomwViewController: UIViewController {
         
         let titleView = MTPageTitleView(frame: titleFrame, titles: titles)
         
+        titleView.delegate = self 
+        
         return titleView
     }()
     
-    fileprivate lazy var pageContentView : PageContentView = {
+    fileprivate lazy var pageContentView : PageContentView = { [weak self] in       
         //确定内容的frame
         let contentH = mScreenH - mStatusBarH - mNavgationBarH - mTitleViewH
         let contentFrame = CGRect(x: 0, y: mStatusBarH+mNavgationBarH+mTitleViewH, width: mScreenW, height: contentH)
@@ -79,5 +81,12 @@ extension HomwViewController{
 //        let qrcodeItem = UIBarButtonItem.createItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
         
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem]
+    }
+}
+
+extension HomwViewController : MTPageTitleViewDelegate{
+    func pageTitleView(titleView: MTPageTitleView, selectedIndex index: Int) {
+        print(index)
+        pageContentView.setCurrentIndex(currentIndex: index)
     }
 }

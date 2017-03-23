@@ -11,11 +11,11 @@ import UIKit
 private let ContentCellId = "ContentCellId"
 class PageContentView: UIView {
     fileprivate var childViewControllers : [UIViewController]
-    fileprivate var parentViewController : UIViewController
+    fileprivate weak var parentViewController : UIViewController?
     
-    fileprivate lazy var collectionView : UICollectionView = {
+    fileprivate lazy var collectionView : UICollectionView = { [weak self] in
        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0//行间距
         layout.minimumInteritemSpacing = 0//item间距
         layout.scrollDirection = .horizontal//水平滚动
@@ -26,12 +26,13 @@ class PageContentView: UIView {
         collectionView.isPagingEnabled = true;
         collectionView.bounces = false//不超出内容滚动区域
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellId)
         return collectionView
     }()
     
     //自定义构造函数
-    init(frame : CGRect, childViewControllers : [UIViewController], parentViewController : UIViewController){
+    init(frame : CGRect, childViewControllers : [UIViewController], parentViewController : UIViewController?){
         self.childViewControllers = childViewControllers
         self.parentViewController = parentViewController
         super.init(frame: frame)
@@ -52,7 +53,7 @@ extension PageContentView{
     fileprivate func setUpUI(){
         //将所有的字控制器添加到父控制器中
         for child in childViewControllers{
-            parentViewController.addChildViewController(child)
+            parentViewController?.addChildViewController(child)
         }
         
         //添加UICollectionView,用于在Cell中存放控制器的View
@@ -80,7 +81,19 @@ extension PageContentView : UICollectionViewDataSource{
     }
 }
 
+extension PageContentView : UICollectionViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+}
 
+//对外暴露的方法
+extension PageContentView{
+    func setCurrentIndex(currentIndex : Int) {
+        let offsetX = CGFloat(currentIndex)*collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x : offsetX, y : 0), animated: true)
+    }
+}
 
 
 

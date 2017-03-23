@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol MTPageTitleViewDelegate : class {//class只能被类遵守
+    func pageTitleView(titleView : MTPageTitleView, selectedIndex index : Int)
+}
+
 private let linewidth : CGFloat = 2
+private var currentIndex = 0
 
 class MTPageTitleView: UIView {
 
     fileprivate var titles : [String]
     
     fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
+    
+    weak var delegate : MTPageTitleViewDelegate?
     /// 懒加载属性
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -79,6 +86,11 @@ extension MTPageTitleView{
             //添加到scrollView中
             scrollView.addSubview(label)
             titleLabels.append(label)
+            
+            //给Label添加手势
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(titleLabelCliked(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
     
@@ -98,7 +110,32 @@ extension MTPageTitleView{
 }
 
 
-
+//监听Label的点击
+extension MTPageTitleView{
+    @objc fileprivate func titleLabelCliked(tapGes : UITapGestureRecognizer){
+        //获取当前Label的下标值
+        guard let currentLabel = tapGes.view as? UILabel else { return }
+        //获取之前的Label
+        let oldLabel = titleLabels[currentIndex]
+        
+        //切换文字的颜色
+        oldLabel.textColor = UIColor.darkGray
+        currentLabel.textColor = UIColor.orange
+        
+        
+        //保存最新label的下标值
+        currentIndex = currentLabel.tag
+        
+        //滚动条的位置发生改变
+        let scrollLineX = CGFloat(currentIndex)*scrollLine.frame.width
+        UIView.animate(withDuration: 0.15) {
+            self.scrollLine.frame.origin.x = scrollLineX
+        }
+        
+        //通知代理
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+    }
+}
 
 
 
