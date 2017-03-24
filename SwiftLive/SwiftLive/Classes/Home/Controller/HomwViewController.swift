@@ -39,6 +39,7 @@ class HomwViewController: UIViewController {
             childVcs.append(vc)
         }
         let contentView = PageContentView(frame: contentFrame, childViewControllers: childVcs, parentViewController: self)
+        contentView.delegate = self
         return contentView
     }()
 
@@ -90,3 +91,37 @@ extension HomwViewController : MTPageTitleViewDelegate{
         pageContentView.setCurrentIndex(currentIndex: index)
     }
 }
+
+extension HomwViewController : PageContentViewDelegate{
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

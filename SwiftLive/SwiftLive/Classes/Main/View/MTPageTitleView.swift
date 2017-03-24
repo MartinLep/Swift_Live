@@ -15,6 +15,9 @@ protocol MTPageTitleViewDelegate : class {//class只能被类遵守
 private let linewidth : CGFloat = 2
 private var currentIndex = 0
 
+private let NormalColor : (CGFloat,CGFloat,CGFloat) = (85,85,85)
+private let SelectColor : (CGFloat,CGFloat,CGFloat) = (255,128,0)
+
 class MTPageTitleView: UIView {
 
     fileprivate var titles : [String]
@@ -103,7 +106,7 @@ extension MTPageTitleView{
         
         
         guard let firstLabel = titleLabels.first else { return  }
-        firstLabel.textColor = UIColor.orange
+        firstLabel.textColor = UIColor(r: SelectColor.0, g: SelectColor.1, b: SelectColor.2, alpha: 1)
         scrollView.addSubview(scrollLine)
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - linewidth, width: firstLabel.frame.width, height: linewidth)
     }
@@ -138,6 +141,31 @@ extension MTPageTitleView{
 }
 
 
+extension MTPageTitleView{
+    func setTitleWithProgress(_ progress : CGFloat,sourceIndex : Int, targetIndex : Int) {
+        //取出courceLabel和targetLabel
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+        
+        //处理滑块的逻辑
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX*progress
+        scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        //颜色的渐变（复杂）
+        let colorData = (SelectColor.0 - NormalColor.0,SelectColor.1 - NormalColor.1,SelectColor.2 - NormalColor.2)
+        
+        //变化sourceLabel
+        sourceLabel.textColor = UIColor(r: SelectColor.0 - colorData.0*progress, g: SelectColor.1 - colorData.1*progress, b: SelectColor.2 - colorData.2*progress, alpha: 1)
+        
+        //变化targetLabel
+        
+        targetLabel.textColor = UIColor(r: NormalColor.0 + colorData.0*progress, g: NormalColor.1 + colorData.1*progress, b: NormalColor.2 + colorData.2*progress, alpha: 1)
+        
+        //记录新的index
+        currentIndex = targetIndex
+    }
+}
 
 
 
