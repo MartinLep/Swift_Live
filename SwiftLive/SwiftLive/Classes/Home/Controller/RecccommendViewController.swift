@@ -54,9 +54,20 @@ class RecccommendViewController: UIViewController {
         super.viewDidLoad()
         
         setUpUI()
+        
+        //发送网络请求
     }
 
 
+}
+
+
+
+// MARK: - 请求数据
+extension RecccommendViewController{
+    fileprivate func loadData(){
+        NetWorkTools.requestData(type: .GET, URLString: <#T##String#>, parameters: <#T##[String : NSString]?#>, finishedCallback: <#T##(Any) -> ()#>)
+    }
 }
 
 
