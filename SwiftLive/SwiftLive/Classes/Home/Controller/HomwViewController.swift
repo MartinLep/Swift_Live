@@ -15,7 +15,7 @@ class HomwViewController: UIViewController {
     fileprivate lazy var pageTitleView : MTPageTitleView = { [weak self] in
        
         let titleFrame =  CGRect(x: 0, y: mStatusBarH + mNavgationBarH, width: mScreenW, height: mTitleViewH)
-    
+        
         let titles = ["推荐","游戏","娱乐","趣玩"]
         
         let titleView = MTPageTitleView(frame: titleFrame, titles: titles)
@@ -27,13 +27,13 @@ class HomwViewController: UIViewController {
     
     fileprivate lazy var pageContentView : PageContentView = { [weak self] in       
         //确定内容的frame
-        let contentH = mScreenH - mStatusBarH - mNavgationBarH - mTitleViewH
+        let contentH = mScreenH - mStatusBarH - mNavgationBarH - mTitleViewH - mTabBarH
         let contentFrame = CGRect(x: 0, y: mStatusBarH+mNavgationBarH+mTitleViewH, width: mScreenW, height: contentH)
         
         //确定所有的字控制器
         var childVcs = [UIViewController]()
-        
-        for _ in 0..<4{
+        childVcs.append(RecccommendViewController())
+        for _ in 0..<3{
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)), alpha: 1.0)
             childVcs.append(vc)
