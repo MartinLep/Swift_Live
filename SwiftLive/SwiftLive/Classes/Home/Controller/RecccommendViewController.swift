@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 private let ItemMargin : CGFloat = 10
 private let ItemW = (mScreenW - 3*ItemMargin)/2
 private let NormalItemH = 3*ItemW/4
@@ -20,6 +19,7 @@ private let HeaderViewH = 50
 
 class RecccommendViewController: UIViewController {
     
+    fileprivate lazy var reccomendViewModel : RecomendViewModel = RecomendViewModel()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
        //创建布局
         
@@ -56,6 +56,7 @@ class RecccommendViewController: UIViewController {
         setUpUI()
         
         //发送网络请求
+        loadData()
     }
 
 
@@ -66,7 +67,7 @@ class RecccommendViewController: UIViewController {
 // MARK: - 请求数据
 extension RecccommendViewController{
     fileprivate func loadData(){
-        NetWorkTools.requestData(type: .GET, URLString: <#T##String#>, parameters: <#T##[String : NSString]?#>, finishedCallback: <#T##(Any) -> ()#>)
+        reccomendViewModel.requestData()
     }
 }
 

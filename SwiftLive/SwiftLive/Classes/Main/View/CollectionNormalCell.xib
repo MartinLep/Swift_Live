@@ -25,12 +25,6 @@
                             <constraint firstAttribute="height" constant="14" id="g53-jM-e0M"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MartinLee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxp-rH-iRF">
-                        <rect key="frame" x="19" y="326" width="477" height="14"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="CWE-9E-k82">
                         <rect key="frame" x="0.0" y="0.0" width="501" height="321"/>
                         <userDefinedRuntimeAttributes>
@@ -51,6 +45,12 @@
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="6666" image="Image_online"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MartinLee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxp-rH-iRF">
+                        <rect key="frame" x="16" y="328" width="477" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -69,7 +69,7 @@
                 <constraint firstItem="6aj-ho-Xjb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lx1-tS-bRl"/>
             </constraints>
             <size key="customSize" width="501" height="350"/>
-            <point key="canvasLocation" x="29" y="-59"/>
+            <point key="canvasLocation" x="28.5" y="-59"/>
         </collectionViewCell>
     </objects>
     <resources>

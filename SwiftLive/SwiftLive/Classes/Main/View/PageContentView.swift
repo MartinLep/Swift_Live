@@ -106,6 +106,7 @@ extension PageContentView : UICollectionViewDelegate{
         let currentOffsetX = scrollView.contentOffset.x
         let scrollViewW = scrollView.bounds.width
         if currentOffsetX > startOffsetX{ //左滑
+            
             //计算progress
             progress = currentOffsetX/scrollViewW - floor(currentOffsetX/scrollViewW)
 //            计算sourceIndex
@@ -129,7 +130,6 @@ extension PageContentView : UICollectionViewDelegate{
                 sourceIndex = childViewControllers.count - 1
             }
         }
-        
         //将progress/sourceIndex/targetIndex传递给titleView
         delegate?.pageContentView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         

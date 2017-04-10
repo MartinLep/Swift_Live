@@ -87,7 +87,6 @@ extension HomwViewController{
 
 extension HomwViewController : MTPageTitleViewDelegate{
     func pageTitleView(titleView: MTPageTitleView, selectedIndex index: Int) {
-        print(index)
         pageContentView.setCurrentIndex(currentIndex: index)
     }
 }

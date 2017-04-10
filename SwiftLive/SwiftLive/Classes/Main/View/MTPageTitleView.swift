@@ -150,6 +150,7 @@ extension MTPageTitleView{
         //处理滑块的逻辑
         let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
         let moveX = moveTotalX*progress
+
         scrollLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
         
         //颜色的渐变（复杂）
