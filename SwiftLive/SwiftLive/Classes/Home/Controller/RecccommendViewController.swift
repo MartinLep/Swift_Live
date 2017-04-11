@@ -21,7 +21,7 @@ class RecccommendViewController: UIViewController {
     
     fileprivate lazy var reccomendViewModel : RecomendViewModel = RecomendViewModel()
     fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
-       //创建布局
+        //创建布局
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: ItemW, height: NormalItemH)
@@ -47,7 +47,7 @@ class RecccommendViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         
         return collectionView
-    }()
+        }()
     
     //系统回调函数
     override func viewDidLoad() {
@@ -58,8 +58,8 @@ class RecccommendViewController: UIViewController {
         //发送网络请求
         loadData()
     }
-
-
+    
+    
 }
 
 
@@ -67,7 +67,9 @@ class RecccommendViewController: UIViewController {
 // MARK: - 请求数据
 extension RecccommendViewController{
     fileprivate func loadData(){
-        reccomendViewModel.requestData()
+        reccomendViewModel.requestData {
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -80,33 +82,37 @@ extension RecccommendViewController{
 
 extension RecccommendViewController : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return reccomendViewModel.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
-            return 8
-        }else{
-            return 4
-        }
+        let group = reccomendViewModel.anchorGroups[section]
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : UICollectionViewCell!
-            
+        //取出模型对象
+        let group = reccomendViewModel.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+        
+        //定义cell
+        var cell : CollectionBaseCell!
         if indexPath.section == 1{
-           cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: PrettyCellID, for: indexPath) as! CollectionPrettyCell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: NormalCellID, for: indexPath) as! CollectionNormalCell
         }
         
-        cell.backgroundColor = UIColor.white
+        cell.anchor = anchor
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NHeaderViewID, for: indexPath)
-
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        //取出moxing
+        headerView.group = reccomendViewModel.anchorGroups[indexPath.section]
+        
         return headerView
     }
     

@@ -31,6 +31,7 @@
 		BD5D13521E9BCE1300C4E969 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13511E9BCE1300C4E969 /* NSDate-Extension.swift */; };
 		BD5D13541E9BD1D600C4E969 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13531E9BD1D600C4E969 /* AnchorGroup.swift */; };
 		BD5D13561E9BD8B800C4E969 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13551E9BD8B800C4E969 /* AnchorModel.swift */; };
+		BD5D13581E9D28B600C4E969 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */; };
 		BD761E6F1E8D3F1E00ADAF4D /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E6E1E8D3F1D00ADAF4D /* NetWorkTools.swift */; };
 		BD761E721E8D49CD00ADAF4D /* RecomendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E711E8D49CD00ADAF4D /* RecomendViewModel.swift */; };
 		BD761E7B1E96703100ADAF4D /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E791E96703100ADAF4D /* CollectionHeaderView.swift */; };
@@ -65,6 +66,7 @@
 		BD5D13511E9BCE1300C4E969 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		BD5D13531E9BD1D600C4E969 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		BD5D13551E9BD8B800C4E969 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
 		BD761E6E1E8D3F1D00ADAF4D /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		BD761E711E8D49CD00ADAF4D /* RecomendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendViewModel.swift; sourceTree = "<group>"; };
 		BD761E791E96703100ADAF4D /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				BD09CD301E856E8D00A39DAF /* CollectionNormalCell.xib */,
 				BD09CD331E85745900A39DAF /* CollectionPrettyCell.swift */,
 				BD09CD341E85745900A39DAF /* CollectionPrettyCell.xib */,
+				BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				BD5D13541E9BD1D600C4E969 /* AnchorGroup.swift in Sources */,
 				BD761E721E8D49CD00ADAF4D /* RecomendViewModel.swift in Sources */,
 				BD5D13521E9BCE1300C4E969 /* NSDate-Extension.swift in Sources */,
+				BD5D13581E9D28B600C4E969 /* CollectionBaseCell.swift in Sources */,
 				BD09EFD61E83BF34000AC6CC /* MTPageTitleView.swift in Sources */,
 				BD09EFD81E83BF34000AC6CC /* UIBarButton+Extension.swift in Sources */,
 				BD09CD351E85745900A39DAF /* CollectionPrettyCell.swift in Sources */,
