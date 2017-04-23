@@ -28,9 +28,19 @@
 		BD09EFF71E83C12B000AC6CC /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD09EFF21E83C12B000AC6CC /* Profile.storyboard */; };
 		BD09EFF91E83E941000AC6CC /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09EFF81E83E941000AC6CC /* PageContentView.swift */; };
 		BD09EFFB1E83EC16000AC6CC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD09EFFA1E83EC16000AC6CC /* UIColor+Extension.swift */; };
+		BD4BECE91EA506340090B448 /* ReccomendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4BECE81EA506340090B448 /* ReccomendGameView.swift */; };
+		BD4BECEB1EA506460090B448 /* ReccomendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4BECEA1EA506460090B448 /* ReccomendGameView.xib */; };
+		BD4BECEE1EA50CB50090B448 /* CollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4BECEC1EA50CB50090B448 /* CollectionGameCell.swift */; };
+		BD4BECEF1EA50CB50090B448 /* CollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4BECED1EA50CB50090B448 /* CollectionGameCell.xib */; };
 		BD5D13521E9BCE1300C4E969 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13511E9BCE1300C4E969 /* NSDate-Extension.swift */; };
 		BD5D13541E9BD1D600C4E969 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13531E9BD1D600C4E969 /* AnchorGroup.swift */; };
 		BD5D13561E9BD8B800C4E969 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13551E9BD8B800C4E969 /* AnchorModel.swift */; };
+		BD5D13581E9D28B600C4E969 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */; };
+		BD6F43291EA3A8D500B2EFFE /* ReccommandCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F43281EA3A8D500B2EFFE /* ReccommandCycleView.swift */; };
+		BD6F432B1EA3A93500B2EFFE /* ReccommandCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD6F432A1EA3A93500B2EFFE /* ReccommandCycleView.xib */; };
+		BD6F432D1EA3BCD000B2EFFE /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F432C1EA3BCD000B2EFFE /* CycleModel.swift */; };
+		BD6F43301EA3C1ED00B2EFFE /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6F432E1EA3C1ED00B2EFFE /* CollectionCycleCell.swift */; };
+		BD6F43311EA3C1ED00B2EFFE /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD6F432F1EA3C1ED00B2EFFE /* CollectionCycleCell.xib */; };
 		BD761E6F1E8D3F1E00ADAF4D /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E6E1E8D3F1D00ADAF4D /* NetWorkTools.swift */; };
 		BD761E721E8D49CD00ADAF4D /* RecomendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E711E8D49CD00ADAF4D /* RecomendViewModel.swift */; };
 		BD761E7B1E96703100ADAF4D /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD761E791E96703100ADAF4D /* CollectionHeaderView.swift */; };
@@ -62,9 +72,19 @@
 		BD09EFF31E83C12B000AC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		BD09EFF81E83E941000AC6CC /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		BD09EFFA1E83EC16000AC6CC /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BD4BECE81EA506340090B448 /* ReccomendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReccomendGameView.swift; sourceTree = "<group>"; };
+		BD4BECEA1EA506460090B448 /* ReccomendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReccomendGameView.xib; sourceTree = "<group>"; };
+		BD4BECEC1EA50CB50090B448 /* CollectionGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionGameCell.swift; sourceTree = "<group>"; };
+		BD4BECED1EA50CB50090B448 /* CollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionGameCell.xib; sourceTree = "<group>"; };
 		BD5D13511E9BCE1300C4E969 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		BD5D13531E9BD1D600C4E969 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		BD5D13551E9BD8B800C4E969 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		BD6F43281EA3A8D500B2EFFE /* ReccommandCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReccommandCycleView.swift; sourceTree = "<group>"; };
+		BD6F432A1EA3A93500B2EFFE /* ReccommandCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReccommandCycleView.xib; sourceTree = "<group>"; };
+		BD6F432C1EA3BCD000B2EFFE /* CycleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
+		BD6F432E1EA3C1ED00B2EFFE /* CollectionCycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
+		BD6F432F1EA3C1ED00B2EFFE /* CollectionCycleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		BD761E6E1E8D3F1D00ADAF4D /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		BD761E711E8D49CD00ADAF4D /* RecomendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendViewModel.swift; sourceTree = "<group>"; };
 		BD761E791E96703100ADAF4D /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -294,6 +314,7 @@
 				BD09CD301E856E8D00A39DAF /* CollectionNormalCell.xib */,
 				BD09CD331E85745900A39DAF /* CollectionPrettyCell.swift */,
 				BD09CD341E85745900A39DAF /* CollectionPrettyCell.xib */,
+				BD5D13571E9D28B600C4E969 /* CollectionBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +342,7 @@
 		BD09EFDD1E83C057000AC6CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BD6F432C1EA3BCD000B2EFFE /* CycleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +369,14 @@
 			children = (
 				BD761E791E96703100ADAF4D /* CollectionHeaderView.swift */,
 				BD761E7A1E96703100ADAF4D /* CollectionHeaderView.xib */,
+				BD6F43281EA3A8D500B2EFFE /* ReccommandCycleView.swift */,
+				BD6F432A1EA3A93500B2EFFE /* ReccommandCycleView.xib */,
+				BD6F432E1EA3C1ED00B2EFFE /* CollectionCycleCell.swift */,
+				BD6F432F1EA3C1ED00B2EFFE /* CollectionCycleCell.xib */,
+				BD4BECE81EA506340090B448 /* ReccomendGameView.swift */,
+				BD4BECEA1EA506460090B448 /* ReccomendGameView.xib */,
+				BD4BECEC1EA50CB50090B448 /* CollectionGameCell.swift */,
+				BD4BECED1EA50CB50090B448 /* CollectionGameCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,7 +449,11 @@
 				BD761E7C1E96703100ADAF4D /* CollectionHeaderView.xib in Resources */,
 				BD09EFF61E83C12B000AC6CC /* Live.storyboard in Resources */,
 				BD09EFBD1E83BEBC000AC6CC /* Assets.xcassets in Resources */,
+				BD6F432B1EA3A93500B2EFFE /* ReccommandCycleView.xib in Resources */,
+				BD4BECEF1EA50CB50090B448 /* CollectionGameCell.xib in Resources */,
 				BD09EFBB1E83BEBC000AC6CC /* Main.storyboard in Resources */,
+				BD6F43311EA3C1ED00B2EFFE /* CollectionCycleCell.xib in Resources */,
+				BD4BECEB1EA506460090B448 /* ReccomendGameView.xib in Resources */,
 				BD09CD361E85745900A39DAF /* CollectionPrettyCell.xib in Resources */,
 				BD09EFF71E83C12B000AC6CC /* Profile.storyboard in Resources */,
 				BD09EFF41E83C12B000AC6CC /* Follow.storyboard in Resources */,
@@ -485,7 +519,10 @@
 				BD09EFB61E83BEBC000AC6CC /* AppDelegate.swift in Sources */,
 				BD09EFFB1E83EC16000AC6CC /* UIColor+Extension.swift in Sources */,
 				BD09EFF91E83E941000AC6CC /* PageContentView.swift in Sources */,
+				BD4BECE91EA506340090B448 /* ReccomendGameView.swift in Sources */,
+				BD6F43291EA3A8D500B2EFFE /* ReccommandCycleView.swift in Sources */,
 				BD09EFD51E83BF34000AC6CC /* MainViewController.swift in Sources */,
+				BD6F432D1EA3BCD000B2EFFE /* CycleModel.swift in Sources */,
 				BD09EFD71E83BF34000AC6CC /* Common.swift in Sources */,
 				BD761E7B1E96703100ADAF4D /* CollectionHeaderView.swift in Sources */,
 				BD761E6F1E8D3F1E00ADAF4D /* NetWorkTools.swift in Sources */,
@@ -493,11 +530,14 @@
 				BD5D13541E9BD1D600C4E969 /* AnchorGroup.swift in Sources */,
 				BD761E721E8D49CD00ADAF4D /* RecomendViewModel.swift in Sources */,
 				BD5D13521E9BCE1300C4E969 /* NSDate-Extension.swift in Sources */,
+				BD5D13581E9D28B600C4E969 /* CollectionBaseCell.swift in Sources */,
 				BD09EFD61E83BF34000AC6CC /* MTPageTitleView.swift in Sources */,
+				BD4BECEE1EA50CB50090B448 /* CollectionGameCell.swift in Sources */,
 				BD09EFD81E83BF34000AC6CC /* UIBarButton+Extension.swift in Sources */,
 				BD09CD351E85745900A39DAF /* CollectionPrettyCell.swift in Sources */,
 				BD09CD311E856E8D00A39DAF /* CollectionNormalCell.swift in Sources */,
 				BD5D13561E9BD8B800C4E969 /* AnchorModel.swift in Sources */,
+				BD6F43301EA3C1ED00B2EFFE /* CollectionCycleCell.swift in Sources */,
 				BD09CD1C1E8567BC00A39DAF /* RecccommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
