@@ -13,7 +13,7 @@ class CollectionGameCell: UICollectionViewCell {
 
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
-    var group : AnchorGroup?{
+    var group : BaseGameModel?{
         didSet{
             titlelabel.text = group?.tag_name
             let url = URL(string: group?.icon_url ?? "")
@@ -22,3 +22,4 @@ class CollectionGameCell: UICollectionViewCell {
     }
 
 }
+				
